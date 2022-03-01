@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[15]:
+# In[1]:
 
 
 import time
@@ -113,9 +113,9 @@ def pretty_array(input_array, pretty_value=False):
     
     for i in input_array:
         if pretty_value:
-            return_str += pretty_field_value(i) + ' '
+            return_str += '"' + pretty_field_value(i) + '" '
         else:
-            return_str += str(i) + ' '
+            return_str += '"' + str(i) + '" '
     
     return return_str
         
@@ -306,7 +306,7 @@ def main():
             song.title = str(pretty_field_value(hdf5_getters.get_title(h5)))
             song.track7DigitalId = str(hdf5_getters.get_track_7digitalid(h5))
             #song.similarArtists = str(pretty_array(hdf5_getters.get_similar_artists(h5), True))
-            #song.artistTerms = str(pretty_array(hdf5_getters.get_artist_terms(h5), True))
+            song.artistTerms = str(pretty_array(hdf5_getters.get_artist_terms(h5), True))
             #song.artistTermsFreq = str(pretty_array(hdf5_getters.get_artist_terms_freq(h5)))
             #song.artistTermsWeight = str(pretty_array(hdf5_getters.get_artist_terms_weight(h5)))
             song.analysisSampleRate = str(hdf5_getters.get_analysis_sample_rate(h5))
